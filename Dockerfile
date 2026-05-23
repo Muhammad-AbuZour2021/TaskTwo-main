@@ -38,4 +38,8 @@ RUN chown -R www-data:www-data /var/www/html \
 RUN sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/sites-available/000-default.conf
 
 # تشغيل التطبيق
-CMD sh -c "php artisan migrate --force || true && php artisan optimize && apache2-foreground"
+CMD sh -c "\
+php artisan migrate --force && \
+php artisan db:seed --force || true && \
+php artisan optimize && \
+apache2-foreground"
