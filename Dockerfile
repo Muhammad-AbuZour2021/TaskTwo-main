@@ -1,28 +1,34 @@
-FROM php:8.2-cli
+FROM php:8.2-apache
 
 RUN apt-get update && apt-get install -y \
-    unzip \
-    git \
-    curl \
-    libpq-dev \
-    libzip-dev \
-    zip \
-    nodejs \
-    npm
+    git curl zip unzip \
+    libpng-dev libjpeg-dev libfreetype6-dev \
+    libpq-dev libzip-dev
 
-RUN docker-php-ext-install zip pdo pdo_pgsql pgsql
+# Node (أفضل طريقة مستقرة)
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
+    apt-get install -y nodejs
 
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+RUN docker-php-ext-install pdo pdo_pgsql pdo_mysql gd zip
 
-WORKDIR /app
+RUN a2enmod rewrite
+
+WORKDIR /var/www/html
 
 COPY . .
 
-RUN composer install --no-dev --optimize-autoloader
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-RUN npm install
-RUN npm run build
+RUN composer install --no-interaction --prefer-dist --optimize-autoloader
 
-EXPOSE 10000
+RUN if [ -f package.json ]; then npm install && npm run build; fi
 
-CMD php artisan serve --host=0.0.0.0 --port=10000
+RUN chown -R www-data:www-data /var/www/html \
+    && chmod -R 775 storage bootstrap/cache
+
+RUN sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/sites-available/000-default.conf
+
+CMD sh -c "\
+php artisan migrate --force || true && \
+php artisan optimize && \
+apache2-foreground"
