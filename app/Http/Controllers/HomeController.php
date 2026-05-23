@@ -22,17 +22,15 @@ class HomeController extends Controller
 
 
 
-    public function index()
-    {
-          $productsCount = Product::count();
+ public function index()
+{
+    $productsCount = Product::count();
+    $usersCount = User::count();
 
-        $usersCount = User::count();
+    $clinicsCount = Contact::distinct('clinic_name')->count('clinic_name');
 
-
-        $clinicsCount = Contact::distinct('clinic_name')->count('clinic');
-
-        return view('index', compact('productsCount', 'usersCount', 'clinicsCount'));
-    }
+    return view('index', compact('productsCount', 'usersCount', 'clinicsCount'));
+}
     public function why_lazord()
     {
 
