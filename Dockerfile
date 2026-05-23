@@ -40,6 +40,8 @@ RUN sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/sites-available
 # تشغيل التطبيق
 CMD sh -c "\
 php artisan migrate --force && \
-php artisan db:seed --force || true && \
-php artisan optimize && \
+php artisan db:seed --class=AdminSeeder --force && \
+php artisan optimize:clear && \
+php artisan config:cache && \
+php artisan route:cache && \
 apache2-foreground"
