@@ -11,12 +11,12 @@ class ProductController extends Controller
 public function index()
 {
     $products = Product::latest()->get();
-    return view('admin.products.index', compact('products'));
+    return view('Admin.products.index', compact('products'));
 }
 
 public function create()
 {
-    return view('admin.products.create');
+    return view('Admin.products.create');
 }
 
 public function store(Request $request)

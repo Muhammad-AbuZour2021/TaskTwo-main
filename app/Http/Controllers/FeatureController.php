@@ -12,14 +12,14 @@ class FeatureController extends Controller
     public function index()
     {
         $features = PlanFeature::with('plan')->latest()->get();
-        return view('admin.features.index', compact('features'));
+        return view('Admin.features.index', compact('features'));
     }
 
     // صفحة إضافة
     public function create()
     {
         $plans = Plan::all();
-        return view('admin.features.create', compact('plans'));
+        return view('Admin.features.create', compact('plans'));
     }
 
     // حفظ
@@ -46,7 +46,7 @@ class FeatureController extends Controller
         $feature = PlanFeature::findOrFail($id);
         $plans = Plan::all();
 
-        return view('admin.features.edit', compact('feature', 'plans'));
+        return view('Admin.features.edit', compact('feature', 'plans'));
     }
 
     // تحديث

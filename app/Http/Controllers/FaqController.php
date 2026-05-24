@@ -13,7 +13,7 @@ class FaqController extends Controller
     public function index()
     {
          $faqs = Faq::latest()->get();
-        return view('admin.faqs.index', compact('faqs'));
+        return view('Admin.faqs.index', compact('faqs'));
     }
 
     /**
@@ -22,7 +22,7 @@ class FaqController extends Controller
     public function create()
     {
 
-        return view('admin.faqs.create');
+        return view('Admin.faqs.create');
     }
 
     /**
@@ -58,7 +58,7 @@ class FaqController extends Controller
     public function edit(string $id)
     {
          $faq = Faq::findOrFail($id);
-        return view('admin.faqs.edit', compact('faq'));
+        return view('Admin.faqs.edit', compact('faq'));
     }
 
     /**

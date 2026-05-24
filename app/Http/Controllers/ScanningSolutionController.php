@@ -10,12 +10,12 @@ class ScanningSolutionController extends Controller
   public function index()
     {
         $solutions = ScanningSolution::with('features')->get();
-        return view('admin.scanning.index', compact('solutions'));
+        return view('Admin.scanning.index', compact('solutions'));
     }
 
     public function create()
     {
-        return view('admin.scanning.create');
+        return view('Admin.scanning.create');
     }
 
     public function store(Request $request)
@@ -43,7 +43,7 @@ class ScanningSolutionController extends Controller
     public function edit($id)
     {
         $solution = ScanningSolution::with('features')->findOrFail($id);
-        return view('admin.scanning.edit', compact('solution'));
+        return view('Admin.scanning.edit', compact('solution'));
     }
 
     public function update(Request $request, $id)

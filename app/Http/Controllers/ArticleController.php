@@ -11,12 +11,12 @@ class ArticleController extends Controller
     {
         $articles = Article::latest()->get();
 
-        return view('admin.articles.index', compact('articles'));
+        return view('Admin.articles.index', compact('articles'));
     }
 
     public function create()
     {
-        return view('admin.articles.create');
+        return view('Admin.articles.create');
     }
 
     public function store(Request $request)
@@ -50,7 +50,7 @@ class ArticleController extends Controller
     {
         $article = Article::findOrFail($id);
 
-        return view('admin.articles.edit', compact('article'));
+        return view('Admin.articles.edit', compact('article'));
     }
 
 

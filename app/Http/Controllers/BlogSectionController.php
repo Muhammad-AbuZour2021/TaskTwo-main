@@ -12,13 +12,13 @@ class BlogSectionController extends Controller
     {
         $blogs = BlogSection::latest()->get();
 
-        return view('admin.blog.index', compact('blogs'));
+        return view('Admin.blog.index', compact('blogs'));
     }
 
     // صفحة إضافة
     public function create()
     {
-        return view('admin.blog.create');
+        return view('Admin.blog.create');
     }
 
     // حفظ
@@ -48,7 +48,7 @@ class BlogSectionController extends Controller
     {
         $blog = BlogSection::findOrFail($id);
 
-        return view('admin.blog.edit', compact('blog'));
+        return view('Admin.blog.edit', compact('blog'));
     }
 
     // تحديث

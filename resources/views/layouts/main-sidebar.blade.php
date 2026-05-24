@@ -1,4 +1,3 @@
-<!-- main-sidebar -->
 <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
 <aside class="app-sidebar sidebar-scroll">
     <div class="main-sidebar-header active">
@@ -40,120 +39,89 @@
                         <path d="M0 0h24v24H0V0z" fill="none" />
                         <path d="M5 5h4v6H5zm10 8h4v6h-4zM5 17h4v2H5zM15 5h4v2h-4z" opacity=".3" />
                         <path
-                            d="M3 13h8V3H3v10zm2-8h4v6H5V5zm8 16h8V11h-8v10zm2-8h4v6h-4v-6zM13 3v6h8V3h-8zm6 4h-4V5h4v2zM3 21h8v-6H3v6zm2-4h4v2H5v-2z" />
-                    </svg><span class="side-menu__label">الرئيسية</span><span
-                        class="badge badge-success side-badge">1</span></a>
+                            d="M3 13h8V3H3v10zm2-8h4v6H5V5zm8 16h8V11h-8v10zm2-8h4v6H5v-6zM13 3v6h8V3h-8zm6 4h-4V5h4v2zM3 21h8v-6H3v6zm2-4h4v2H5v-2z" />
+                    </svg><span class="side-menu__label">الرئيسية</span></a>
             </li>
             <li class="side-item side-item-category">تحكم</li>
             <li class="slide">
                 <a class="side-menu__item" href="{{ url('admin/products') }}"><svg xmlns="http://www.w3.org/2000/svg"
                         class="side-menu__icon" viewBox="0 0 24 24">
                         <path d="M0 0h24v24H0V0z" fill="none" />
+                        <path d="M5 8h14v10H5z" opacity=".3" />
                         <path
-                            d="M12 4c-4.42 0-8 3.58-8 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm3.5 4c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5zm-7 0c.83 0 1.5.67 1.5 1.5S9.33 11 8.5 11 7 10.33 7 9.5 7.67 8 8.5 8zm3.5 9.5c-2.33 0-4.32-1.45-5.12-3.5h1.67c.7 1.19 1.97 2 3.45 2s2.76-.81 3.45-2h1.67c-.8 2.05-2.79 3.5-5.12 3.5z"
-                            opacity=".3" />
-                        <circle cx="15.5" cy="9.5" r="1.5" />
-                        <circle cx="8.5" cy="9.5" r="1.5" />
-                        <path
-                            d="M12 16c-1.48 0-2.75-.81-3.45-2H6.88c.8 2.05 2.79 3.5 5.12 3.5s4.32-1.45 5.12-3.5h-1.67c-.69 1.19-1.97 2-3.45 2zm-.01-14C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z" />
-                    </svg><span class="side-menu__label">المنتجات الرائد </span><span
-                        class="badge badge-danger side-badge">New</span></a>
-
+                            d="M12 2C9.24 2 7 4.24 7 7H5c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2h-2c0-2.76-2.24-5-5-5zm0 2c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm7 14H5V9h14v10z" />
+                    </svg><span class="side-menu__label">المنتجات الرائدة</span></a>
             </li>
             <li class="slide">
                 <a class="side-menu__item" href="{{ url('admin/scanning') }}"><svg xmlns="http://www.w3.org/2000/svg"
                         class="side-menu__icon" viewBox="0 0 24 24">
                         <path d="M0 0h24v24H0V0z" fill="none" />
+                        <path d="M5 5h14v14H5z" opacity=".3" />
                         <path
-                            d="M12 4c-4.42 0-8 3.58-8 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm3.5 4c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5zm-7 0c.83 0 1.5.67 1.5 1.5S9.33 11 8.5 11 7 10.33 7 9.5 7.67 8 8.5 8zm3.5 9.5c-2.33 0-4.32-1.45-5.12-3.5h1.67c.7 1.19 1.97 2 3.45 2s2.76-.81 3.45-2h1.67c-.8 2.05-2.79 3.5-5.12 3.5z"
-                            opacity=".3" />
-                        <circle cx="15.5" cy="9.5" r="1.5" />
-                        <circle cx="8.5" cy="9.5" r="1.5" />
-                        <path
-                            d="M12 16c-1.48 0-2.75-.81-3.45-2H6.88c.8 2.05 2.79 3.5 5.12 3.5s4.32-1.45 5.12-3.5h-1.67c-.69 1.19-1.97 2-3.45 2zm-.01-14C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z" />
+                            d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 10h10v2H7zm0-3h10v2H7zm0 6h7v2H7z" />
                     </svg><span class="side-menu__label">حلول المسح الضوئي</span></a>
-
             </li>
 
             <li class="slide">
                 <a class="side-menu__item" href="{{ url('admin/articles') }}"><svg xmlns="http://www.w3.org/2000/svg"
                         class="side-menu__icon" viewBox="0 0 24 24">
                         <path d="M0 0h24v24H0V0z" fill="none" />
+                        <path d="M5 5v14h14V5H5zm9 12H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" opacity=".3" />
                         <path
-                            d="M12 4c-4.42 0-8 3.58-8 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm3.5 4c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5zm-7 0c.83 0 1.5.67 1.5 1.5S9.33 11 8.5 11 7 10.33 7 9.5 7.67 8 8.5 8zm3.5 9.5c-2.33 0-4.32-1.45-5.12-3.5h1.67c.7 1.19 1.97 2 3.45 2s2.76-.81 3.45-2h1.67c-.8 2.05-2.79 3.5-5.12 3.5z"
-                            opacity=".3" />
-                        <circle cx="15.5" cy="9.5" r="1.5" />
-                        <circle cx="8.5" cy="9.5" r="1.5" />
-                        <path
-                            d="M12 16c-1.48 0-2.75-.81-3.45-2H6.88c.8 2.05 2.79 3.5 5.12 3.5s4.32-1.45 5.12-3.5h-1.67c-.69 1.19-1.97 2-3.45 2zm-.01-14C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z" />
+                            d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-12-2h7v-2H7v2zm0-4h10v-2H7v2zm0-4h10V7H7v2z" />
                     </svg><span class="side-menu__label">المقالات</span></a>
-
             </li>
-
 
             <li class="slide">
                 <a class="side-menu__item" href="{{ url('admin/blogs') }}"><svg xmlns="http://www.w3.org/2000/svg"
                         class="side-menu__icon" viewBox="0 0 24 24">
                         <path d="M0 0h24v24H0V0z" fill="none" />
-                        <path d="M12 4c-4.42 0-8 3.58-8 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm3.5 4c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5zm-7 0c.83 0 1.5.67 1.5 1.5S9.33 11 8.5 11 7 10.33 7 9.5 7.67 8 8.5 8zm3.5 9.5c-2.33 0-4.32-1.45-5.12-3.5h1.67c.7 1.19 1.97 2 3.45 2s2.76-.81
-3.45-2h1.67c-.8 2.05-2.79
-                        <circle cx="15.5" cy="9.5" r=" 1.5" />
-                        <circle cx="8.5" cy="9.5" r="1.5" />
+                        <path d="M14 10H3v10h11v-10zm-3 7H6v-2h5v2z" opacity=".3" />
                         <path
-                            d="M12 16c-1.48 0-2.75-.81-3.45-2H6.88c.8 2.05 2.79 3.5 5.12 3.5s4.32-1.45 5.12-3.5h-1.67c-.69 1.19-1.97 2-3.45 2zm-.01-14C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z" />
+                            d="M21.41 4.59l-2-2c-.39-.39-1.02-.39-1.41 0L16.17 4H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7.83l4.41-4.41c.39-.39.39-1.02 0-1.41zM14 20H3V6h11v4H10v10h4zm-3-3H6v-2h5v2zm7-9.17L16.17 6l1.41-1.41L19.41 6z" />
                     </svg><span class="side-menu__label">المدونات</span></a>
-
             </li>
-
-
-
 
             <li class="slide">
                 <a class="side-menu__item" href="{{ url('admin/faqs') }}"><svg xmlns="http://www.w3.org/2000/svg"
                         class="side-menu__icon" viewBox="0 0 24 24">
                         <path d="M0 0h24v24H0V0z" fill="none" />
                         <path
-                            d="M12 4c-4.42 0-8 3.58-8 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm3.5 4c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5zm-7 0c.83 0 1.5.67 1.5 1.5S9.33 11 8.5 11 7 10.33 7 9.5 7.67 8 8.5 8zm3.5 9.5c-2.33 0-4.32-1.45-5.12-3.5h1.67c.7 1.19 1.97 2 3.45 2s2.76-.81 3.45-2h1.67c-.8 2.05-2.79 3.5-5.12 3.5z"
+                            d="M12 4c-4.41 0-8 3.59-8 8 0 1.68.52 3.24 1.41 4.54L4 20l3.54-1.41C8.83 19.48 10.37 20 12 20c4.41 0 8-3.59 8-8s-3.59-8-8-8zm1 14h-2v-2h2v2zm0-4.2c0-1.7-1.3-2.5-2.2-3.1-.9-.5-1.8-1.1-1.8-2.7h2c0 .9.5 1.3 1.3 1.8.9.5 2.7 1.4 2.7 4h-2z"
                             opacity=".3" />
-                        <circle cx="15.5" cy="9.5" r="1.5" />
-                        <circle cx="8.5" cy="9.5" r="1.5" />
                         <path
-                            d="M12 16c-1.48 0-2.75-.81-3.45-2H6.88c.8 2.05 2.79 3.5 5.12 3.5s4.32-1.45 5.12-3.5h-1.67c-.69 1.19-1.97 2-3.45 2zm-.01-14C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z" />
+                            d="M12 2C6.48 2 2 6.48 2 12c0 1.74.45 3.37 1.24 4.8L2 22l5.3-1.24C8.69 21.54 10.28 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.63 0-3.17-.52-4.46-1.41L4 20l1.42-3.54C4.52 15.17 4 13.63 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8zm1-4h-2v-2h2v2zm0-4.2c0-2.6-1.8-3.5-2.7-4-.8-.5-1.3-.9-1.3-1.8h-2c0 1.6.9 2.2 1.8 2.7.9.6 2.2 1.4 2.2 3.1h2z" />
                     </svg><span class="side-menu__label">الأسئلة الشائعة</span></a>
-
-
             </li>
 
             <li class="slide">
                 <a class="side-menu__item" data-toggle="slide" href="{{ url('/' . ($page = '#')) }}"><svg
                         xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24">
                         <path d="M0 0h24v24H0V0z" fill="none" />
-                        <path d="M19 5H5v14h14V5zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" opacity=".3" />
                         <path
-                            d="M3 5v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2zm2 0h14v14H5V5zm2 5h2v7H7zm4-3h2v10h-2zm4 6h2v4h-2z" />
+                            d="M12 4.1L4.44 8 12 11.9l7.56-3.9L12 4.1zM4.04 12.18l7.96 4.13 7.96-4.13v-2.2L12 13.9 4.04 9.98v2.2z"
+                            opacity=".3" />
+                        <path
+                            d="M12 2L2 7l10 5 10-5-10-5zM4.44 8L12 4.15 19.56 8 12 11.9 4.44 8zm0 4.18l7.96 4.14 7.96-4.14v-2.2L12 13.9 4.04 9.98v2.2zM12 18.5l-7.96-4.13v2.2l7.96 4.13 7.96-4.13v-2.2L12 18.5z" />
                     </svg><span class="side-menu__label">الباقات</span><i class="angle fe fe-chevron-down"></i></a>
                 <ul class="slide-menu">
                     <li><a class="slide-item" href="{{ url('admin/plans') }}">الباقات</a></li>
                     <li><a class="slide-item" href="{{ url('admin/features') }}">مميزات الباقات</a></li>
-                    <li><a class="slide-item" href="{{ url('/' . ($page = 'chart-chartjs')) }}">ChartJS</a></li>
                 </ul>
             </li>
 
-            <li class="side-item side-item-category">تواصل</li>
             <li class="slide">
                 <a class="side-menu__item" data-toggle="slide" href="{{ url('/' . ($page = '#')) }}"><svg
                         xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24">
                         <path d="M0 0h24v24H0V0z" fill="none" />
-                        <path d="M4 12c0 4.08 3.06 7.44 7 7.93V4.07C7.05 4.56 4 7.92 4 12z" opacity=".3" />
+                        <path d="M20 6H4v12h16V6zm-2 2l-6 4-6-4h12z" opacity=".3" />
                         <path
-                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93s3.05-7.44 7-7.93v15.86zm2-15.86c1.03.13 2 .45 2.87.93H13v-.93zM13 7h5.24c.25.31.48.65.68 1H13V7zm0 3h6.74c.08.33.15.66.19 1H13v-1zm0 9.93V19h2.87c-.87.48-1.84.8-2.87.93zM18.24 17H13v-1h5.92c-.2.35-.43.69-.68 1zm1.5-3H13v-1h6.93c-.04.34-.11.67-.19 1z" />
+                            d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V6l8 5 8-5v12zm-8-8L4 8h16l-8 2z" />
                     </svg><span class="side-menu__label">تواصل</span><i class="angle fe fe-chevron-down"></i></a>
                 <ul class="slide-menu">
                     <li><a class="slide-item" href="{{ url('admin/contact') }}">رسائل</a></li>
-
                 </ul>
             </li>
         </ul>
     </div>
 </aside>
-<!-- main-sidebar -->

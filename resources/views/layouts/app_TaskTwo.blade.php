@@ -12,11 +12,11 @@
     href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Tajawal:wght@300;400;500;700;800&display=swap"
     rel="stylesheet" />
  <style>
-   /* NAV ACTIONS */
+/* NAV ACTIONS */
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 10px; /* تقليل المسافة قليلاً لتناسب الشاشات الصغيرة */
 }
 
 /* PHONE */
@@ -34,6 +34,7 @@
   text-decoration: none;
   font-size: 14px;
   transition: 0.3s;
+  white-space: nowrap; /* يمنع النص من الانقسام على سطرين */
 }
 
 .btn-login:hover {
@@ -51,6 +52,7 @@
   font-size: 14px;
   box-shadow: 0 4px 12px rgba(57, 230, 66, 0.3);
   transition: 0.3s;
+  white-space: nowrap; /* يمنع النص من الانقسام على سطرين */
 }
 
 .btn-cta:hover {
@@ -110,6 +112,11 @@
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
+  /* إخفاء روابط التنقل العادية في الجوال لأنها موجودة في القائمة الجانبية/المنسدلة */
+  .nav-links {
+    display: none;
+  }
+
   .phone {
     display: none;
   }
@@ -118,16 +125,57 @@
     display: none;
   }
 
+  /* تصغير حجم الخط والمسافات الداخلية للأزرار لتناسب شاشة الجوال بجانب اللوجو */
   .btn-login {
-    padding: 6px 12px;
+    padding: 6px 10px;
+    font-size: 12px;
   }
 
   .btn-cta {
-    padding: 6px 12px;
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  /* تأمين بقاء الأزرار بجانب بعضها دائماً */
+  .nav-actions {
+    gap: 8px;
+    display: flex !important;
   }
 }
-  </style>
+/* تنسيق حاوية أزرار الجوال لتصبح بجانب بعضها */
+.mobile-menu-buttons {
+  display: flex;
+  gap: 10px; /* المسافة بين الزرين */
+  width: 100%;
+  justify-content: center; /* توسيط الأزرار */
+  margin-top: 15px; /* مسافة علوية مناسبة تفصلهم عن الروابط */
+  padding: 0 15px; /* مساحة أمان جانبية */
+}
 
+/* لضمان اتساع الأزرار وتساويها داخل الجوال */
+.mobile-menu-buttons .mobile-cta {
+  flex: 1;
+  text-align: center;
+  font-size: 14px;
+  padding: 10px 5px;
+}
+/* DASHBOARD BUTTON IN USER MENU */
+.btn-dashboard {
+    background: #222; /* لون داكن مميز */
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 12px;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.btn-dashboard:hover {
+    background: #000;
+    color: #fff;
+}
+</style>
 </head>
 
 <body>
@@ -144,40 +192,52 @@
         <a href="{{ route('learn') }}">التعلم</a>
       </nav>
   <div class="nav-actions">
-  <span class="phone">هاتف: +(970)0594866148</span>
+  <span class="phone">هاتف: 0592313599</span>
 
   @guest
       <a href="{{ route('login') }}" class="btn-login">تسجيل الدخول</a>
       <a href="{{ route('pricing') }}" class="btn-cta">ابدأ الآن</a>
   @endguest
+@auth
+    <div class="user-menu">
+        <div class="user-info">
+            <img src="{{ Auth::user()->image ?? 'https://ui-avatars.com/api/?name=' . Auth::user()->name }}"
+                 class="user-avatar">
+            <span class="user-name">{{ Auth::user()->name }}</span>
+        </div>
 
-  @auth
-      <div class="user-menu">
-          <div class="user-info">
-              <img src="{{ Auth::user()->image ?? 'https://ui-avatars.com/api/?name=' . Auth::user()->name }}"
-                   class="user-avatar">
-              <span class="user-name">{{ Auth::user()->name }}</span>
-          </div>
+        <a href="{{ url('admin/dashboard') }}" class="btn-dashboard">لوحة التحكم</a>
 
-          <form method="POST" action="{{ route('logout') }}">
-              @csrf
-              <button type="submit" class="btn-logout">خروج</button>
-          </form>
-      </div>
-  @endauth
+        <form method="POST" action="{{ route('logout') }}">
+            @csrf
+            <button type="submit" class="btn-logout">خروج</button>
+        </form>
+    </div>
+@endauth
 </div>
       <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="القائمة">
         <span></span><span></span><span></span>
       </button>
     </div>
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="{{ route('why-lazord') }}">لماذا لازورد</a>
-      <a href="{{ route('lab-services') }}">خدمات المختبرات</a>
-      <a href="{{ route('solutions') }}">الحلول</a>
-      <a href="{{ route('pricing') }}">التسعير</a>
-      <a href="{{ route('learn') }}">التعلم</a>
-      <a href="{{ route('pricing') }}" class="btn-cta mobile-cta">ابدأ الآن</a>
-    </div>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="{{ route('why-lazord') }}">لماذا لازورد</a>
+  <a href="{{ route('lab-services') }}">خدمات المختبرات</a>
+  <a href="{{ route('solutions') }}">الحلول</a>
+  <a href="{{ route('pricing') }}">التسعير</a>
+  <a href="{{ route('learn') }}">التعلم</a>
+
+  <div class="mobile-menu-buttons">
+  <a href="{{ route('pricing') }}" class="btn-cta mobile-cta">ابدأ الآن</a>
+
+  @guest
+      <a href="{{ route('login') }}" class="btn mobile-cta">تسجيل الدخول</a>
+  @endguest
+
+      @if(Auth::user()->role_as == 1)
+          <a href="{{ route('dashboard') }}" class="btn mobile-cta" >لوحة التحكم</a>
+      @endif
+</div>
+</div>
   </header>
 
 
@@ -188,7 +248,7 @@
 
 
   <!-- FOOTER -->
- 
+
     <div class="container footer-container">
       <div class="footer-cta">
         <h3>هل مازلت تأخذ الانطباعات الجسدية؟</h3>
