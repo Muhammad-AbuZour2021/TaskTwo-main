@@ -229,13 +229,19 @@
   <div class="mobile-menu-buttons">
   <a href="{{ route('pricing') }}" class="btn-cta mobile-cta">ابدأ الآن</a>
 
-  @guest
-      <a href="{{ route('login') }}" class="btn mobile-cta">تسجيل الدخول</a>
-  @endguest
+@guest
+    <a href="{{ route('login') }}" class="btn mobile-cta">
+        تسجيل الدخول
+    </a>
+@endguest
 
-      @if(Auth::user()->role_as == 1)
-          <a href="{{ route('dashboard') }}" class="btn mobile-cta" >لوحة التحكم</a>
-      @endif
+@auth
+    @if(Auth::user()->role_as == 1)
+        <a href="{{ route('dashboard') }}" class="btn mobile-cta">
+            لوحة التحكم
+        </a>
+    @endif
+@endauth
 </div>
 </div>
   </header>
