@@ -40,6 +40,7 @@ RUN sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/sites-available
 # تشغيل التطبيق
 CMD sh -c "\
 php artisan migrate --force && \
+php artisan storage:link && \
 php artisan db:seed --class=AdminSeeder --force && \
 php artisan optimize:clear && \
 php artisan config:cache && \
